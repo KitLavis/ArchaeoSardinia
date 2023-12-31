@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,6 +22,9 @@
 
 </head>
 <body>
-    
+
+    {% block content %}
+    <!-- content goes here -->
+    {% endblock content %}
 </body>
 </html>
