@@ -5,10 +5,10 @@ from .models import Post
 
 class PostList(generic.ListView):
     models = Post
-    queryset = Post.objects.filter(status=1).order_by('created_on')
+    queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
     paginate_by = 6
 
-# class PostDetail(generic.DetailView):
-#     model = Post
-#     template_name = 'post_detail.html'
+class post_detail(generic.DetailView):
+    model = Post
+    template_name = 'post_detail.html'
