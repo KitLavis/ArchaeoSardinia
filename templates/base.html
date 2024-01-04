@@ -43,7 +43,7 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 letter-space-2">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">home</a>
+                        <a class="nav-link" aria-current="page" href="{% url 'home' %}">home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">our goal</a>
@@ -70,13 +70,21 @@
                 Insights
             </p>
             <ul class="nav col-md-4 justify-content-end">
-                <li class="nav-item"><a href="http://www.youtube.com" class="nav-link px-2 text-muted"><i class="fa-brands fa-youtube"></i></a></li>
-                <li class="nav-item"><a href="http://www.facebook.com" class="nav-link px-2 text-muted"><i class="fa-brands fa-facebook"></i></a></li>
-                <li class="nav-item"><a href="http://ww.instagram.com" class="nav-link px-2 text-muted"><i class="fa-brands fa-instagram"></i></a></li>
-                <li class="nav-item"><a href="http://www.twitter.com" class="nav-link px-2 text-muted"><i class="fa-brands fa-x-twitter"></i></a></li>
+                <li class="nav-item"><a href="http://www.youtube.com" class="nav-link px-2 text-muted" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
+                <li class="nav-item"><a href="http://www.facebook.com" class="nav-link px-2 text-muted" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
+                <li class="nav-item"><a href="http://ww.instagram.com" class="nav-link px-2 text-muted" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                <li class="nav-item"><a href="http://www.twitter.com" class="nav-link px-2 text-muted" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
             </ul>
         </footer>
     </div>
 
+    <script>
+        document.querySelectorAll(".nav-link").forEach((link) => {
+                if (link.href === window.location.href) {
+                    link.classList.add("active");
+                    link.setAttribute("aria-current", "page");
+                }
+            });
+    </script>
 </body>
 </html>
