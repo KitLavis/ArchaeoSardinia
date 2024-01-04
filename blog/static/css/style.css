@@ -1,0 +1,16 @@
+body {
+    background-color: #faf0e6;
+    font-family: "EB Garamond", serif;
+}
+
+.bg-is-primary {
+    background-color: #faf0e6;
+}
+
+.letter-space-2 {
+    letter-spacing: 2px;
+}
+
+.letter-space-4 {
+    letter-spacing: 4px;
+}
