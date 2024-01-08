@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-kitlavis-insight-sardini-fgocf8hc5a.us2.codeanyapp.com', 'insights-sardinia.herokuapp.com']
+ALLOWED_HOSTS = ['8000-kitlavis-insightssardin-36xckim49yh.ws-eu107.gitpod.io', 'insights-sardinia.herokuapp.com']
 
 
 # Application definition
@@ -141,6 +141,13 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+CLOUDINARY_STORAGE = {
+      'CLOUD_NAME': 'duxza3pht',
+      'API_SECRET': '329144495855631',
+      'API_KEY': 'Fqfn66TMDl_OBSuzq_mRzEsKjW4',
+      'api_proxy': 'http://proxy.server:3128'
+}
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
