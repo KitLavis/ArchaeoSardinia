@@ -32,6 +32,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['8000-kitlavis-insightssardin-36xckim49yh.ws-eu107.gitpod.io', 'insights-sardinia.herokuapp.com']
 
+CSRF_TRUSTED_ORIGINS = ['https://8000-kitlavis-insightssardin-36xckim49yh.ws-eu107.gitpod.io']
 
 # Application definition
 
@@ -44,9 +45,15 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
+    'crispy_forms',
+    'crispy_bootstrap4',
     'django_summernote',
     'blog',
 ]
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
