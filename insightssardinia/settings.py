@@ -144,8 +144,8 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 CLOUDINARY_STORAGE = {
       'CLOUD_NAME': 'duxza3pht',
-      'API_SECRET': '329144495855631',
-      'API_KEY': 'Fqfn66TMDl_OBSuzq_mRzEsKjW4',
+      'API_SECRET': os.getenv('API_SECRET'),
+      'API_KEY': os.getenv('API_KEY'),
       'api_proxy': 'http://proxy.server:3128'
 }
 
