@@ -52,9 +52,20 @@
                         <a class="nav-link" href="#">meet the authors</a>
                     </li>
                 </ul>
-                <span class="navbar-text">
-                    Registration Area
-                </span>
+                <ul class="navbar-nav mb-2 mb-lg-0 letter-space-2">
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">logout</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">register</a>
+                    </li>
+                    {% endif %}
+                </ul>
             </div>
         </div>
     </nav>
