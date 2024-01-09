@@ -5,9 +5,13 @@
 {% block content %}
 <div class="masthead">
     <div class="container">
-        <div class="masthead-text">
-            <h1 class="post-title">{{ post.title }}</h1>
-            <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <div class="masthead-text">
+                    <h1 class="post-title">{{ post.title }}</h1>
+                    <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
+                </div>
+            </div>
         </div>
         <div class="d-flex justify-content-center masthead-image">
             {% if "placeholder" in post.featured_image.url %}
