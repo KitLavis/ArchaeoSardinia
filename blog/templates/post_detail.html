@@ -82,11 +82,16 @@
                         </span> wrote:
                     </p>
                     <!-- The body of the comment goes before the | -->
-                    {{ comment.content | linebreaks }}
+                    <div>
+                        <p id="comment{{ comment.id }}">{{ comment.content }}</p>
+                    </div>
                 </div>
+                {% if user.is_authenticated and comment.name == user %}
+                <button class="btn btn-delete" data-comment_id="{{ comment.id }}">Delete</button>
+                <button class="btn btn-edit" data-comment_id="{{ comment.id }}">Edit</button>
+                {% endif %}
                 <!-- Our for loop ends here -->
                 {% endfor %}
-            </div>
                 {% if user.is_authenticated %}
 
                 <h3>Leave a comment:</h3>
@@ -104,3 +109,7 @@
 </div>
 
 {% endblock content %}
+
+{% block extras %}
+<script src="{% static 'js/comments.js' %}"></script>
+{% endblock %}
