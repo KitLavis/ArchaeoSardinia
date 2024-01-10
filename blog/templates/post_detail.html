@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load humanize %}
 {% load crispy_forms_tags %}
 {% load static %}
 
@@ -57,7 +58,7 @@
                         {{ comment.name }}
                         <span class=" text-muted font-weight-normal">
                             <!-- The comment's created date goes here -->
-                            {{ comment.created_on }}
+                            {{ comment.created_on|naturaltime }}
                         </span> wrote:
                     </p>
                     <!-- The body of the comment goes before the | -->

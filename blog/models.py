@@ -43,7 +43,7 @@ class Comment(models.Model):
         on_delete=models.CASCADE,
         related_name="comments"
     )
-    content = models.TextField(default='n/a')
+    content = models.TextField(default='Have your say here!')
     created_on = models.DateTimeField(auto_now_add=True)
     likes = models.ManyToManyField(User, related_name='comment_likes', blank=True)
 
