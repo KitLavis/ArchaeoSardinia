@@ -23,6 +23,8 @@ class PostDetail(View):
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
 
+        comment_form = CommentForm()
+
         return render(
             request,
             "post_detail.html",
@@ -31,7 +33,7 @@ class PostDetail(View):
                 "comments": comments,
                 "commented": False,
                 "liked": liked,
-                "comment_form": CommentForm()
+                "comment_form": comment_form
             },
         )
 
@@ -50,20 +52,22 @@ class PostDetail(View):
             comment = comment_form.save(commit=False)
             comment.post = post
             comment.save()
-        else:
+
             comment_form = CommentForm()
 
-        return render(
-            request,
-            "post_detail.html",
-            {
-                "post": post,
-                "comments": comments,
-                "commented": True,
-                "comment_form": comment_form,
-                "liked": liked
-            },
-        )
+        # return render(
+        #     request,
+        #     "post_detail.html",
+        #     {
+        #         "post": post,
+        #         "comments": comments,
+        #         "commented": True,
+        #         "comment_form": comment_form,
+        #         "liked": liked
+        #     },
+        # )
+
+        return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 def comment_edit(request, slug, comment_id):
     if request.method == "POST":
@@ -71,13 +75,19 @@ def comment_edit(request, slug, comment_id):
         post = get_object_or_404(queryset, slug=slug)
         comment = get_object_or_404(Comment, pk=comment_id)
         comment_form = CommentForm(data=request.POST, instance=comment)
-    
+
     if comment_form.is_valid() and comment.name == request.user:
         comment = comment_form.save(commit=False)
         comment.save()
-        messages.add_message(request, messages.SUCCESS, 'Comment successfully updated!')
+        messages.add_message(
+            request, messages.SUCCESS, 'Comment successfully updated!'
+            )
     else:
-        messages.add_message(request, messages.ERROR, 'Error updating comment! Please try again.')
+        messages.add_message(
+            request,
+            messages.ERROR,
+            'Error updating comment! Please try again.'
+            )
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
