@@ -9,6 +9,7 @@ class Contributor(models.Model):
     background = models.TextField()
     motivation = models.TextField()
     fav_place = models.CharField(max_length=200)
+    created_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         ordering = ['-created_on']
