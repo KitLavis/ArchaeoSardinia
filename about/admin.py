@@ -8,4 +8,4 @@ class ContributorAdmin(SummernoteModelAdmin):
 
     list_display = ('name', 'role', 'created_on')
     search_fields = ['name', 'role']
-    summernote_fields = ('content')
+    summernote_fields = ('background', 'motivation')

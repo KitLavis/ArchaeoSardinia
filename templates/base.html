@@ -58,7 +58,7 @@
                         <a class="nav-link" href="#">our goal</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">meet the authors</a>
+                        <a class="nav-link" href="{% url 'meet-the-team' %}">meet the team</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav mb-2 mb-lg-0 letter-space-2">
@@ -79,11 +79,13 @@
         </div>
     </nav>
 
-    {% block content %}
-    <!-- content goes here -->
-    {% endblock content %}
+    <main>
+        {% block content %}
+        <!-- content goes here -->
+        {% endblock content %}
+    </main>
 
-    <div class="container">
+    <div class="footer-container">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
             <p class="col-md-4 mb-0 text-muted">© 2023 Kit Lavis</p>
             <p class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
@@ -94,7 +96,6 @@
                 <li class="nav-item"><a href="http://www.facebook.com" class="nav-link px-2 text-muted" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
                 <li class="nav-item"><a href="http://www.instagram.com" class="nav-link px-2 text-muted" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
                 <li class="nav-item"><a href="http://www.twitter.com" class="nav-link px-2 text-muted" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
-            </ul>
         </footer>
     </div>
 

@@ -3,6 +3,18 @@ body {
     font-family: "EB Garamond", serif;
 }
 
+main {
+    min-height: 100vh;
+}
+
+.footer-container {
+    position: relative;
+    bottom: 0;
+    top: auto;
+    left: 12.5vw;
+    width: 75vw;
+}
+
 .bg-is-primary {
     background-color: #faf0e6;
 }
