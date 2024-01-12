@@ -73,6 +73,7 @@
     {% else %}
     <h3>{{ comment_count }} Comments:</h3>
     {% endif %}
+
     {% for comment in comments %}
     <div class="row">
         <div class="col-md-8 card mb-2 mt-2">
@@ -99,6 +100,7 @@
         </div>
     </div>
     {% endfor %}
+
     {% if user.is_authenticated and comment_count > 0 %}
     <h3>Leave a comment:</h3>
     <p>Posting as: {{ user.username }}</p>

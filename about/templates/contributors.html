@@ -3,4 +3,17 @@
 
 {% block content %}
 
+{% for contributor in object_list %}
+<div class="card contributor-card" style="width: 18rem;">
+    <img src="{{ contributor.headshot.url }}" class="card-img-top" alt="{{ contributor.name }}"">
+    <div class="card-body">
+      <h5 class="card-title">{{ contributor.name }}</h5>
+      <p class="card-text">{{ contributor.role }}</p>
+    </div>
+    <div class="card-body">
+      <a href="#" class="card-link">Find out more...</a>
+    </div>
+  </div>
+{% endfor %}
+
 {% endblock %}
