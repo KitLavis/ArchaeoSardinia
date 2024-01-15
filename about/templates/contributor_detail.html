@@ -1,8 +1,56 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load humanize %}
 
 {% block content %}
 
 
+<div class="contributor-container ml-1">
+    <div class="row g-0">
+        <div class="col">
+            <div class="headshot-image">
+                {% if "placeholder" in contributor.headshot.url %}
+                <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder">
+                {% else %}
+                <img src="{{ contributor.headshot.url }}" class="scale" alt="{{ contributor.name }}">
+                {% endif %}
+            </div>
+        </div>
+        <div class="col">
+            <div class="masthead-text">
+                <h1 class="contributor-name">{{ contributor.name }}</h1>
+                {% if contributor.name == 'Kit Lavis' %}
+                <p class="contributor-info">{{ contributor.role }} | Founded the project: {{ contributor.created_on }}</p>
+                {% else %}
+                <p class="contributor-info">{{ contributor.role }} | Joined us: {{ contributor.created_on }}</p>
+                {% endif %}
+            </div>
+            <div class="card mb-2">
+                <div class="card-header">Background</div>
+                <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                    <p>{{ contributor.background }}</p>
+                </blockquote>
+                </div>
+            </div>
+            <div class="card mb-2">
+                <div class="card-header">Motivation</div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                    <p>{{ contributor.motivation }}</p>
+                    </blockquote>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">Favourtie place in Sardinia</div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                    <p>{{ contributor.fav_place }}</p>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
