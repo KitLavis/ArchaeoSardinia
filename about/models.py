@@ -13,7 +13,7 @@ class Contributor(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        ordering = ['-created_on']
+        ordering = ['name']
 
     def __str__(self):
         return self.name

@@ -57,18 +57,6 @@ class PostDetail(View):
 
             comment_form = CommentForm()
 
-        # return render(
-        #     request,
-        #     "post_detail.html",
-        #     {
-        #         "post": post,
-        #         "comments": comments,
-        #         "commented": True,
-        #         "comment_form": comment_form,
-        #         "liked": liked
-        #     },
-        # )
-
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 def comment_edit(request, slug, comment_id):
