@@ -4,6 +4,7 @@ from cloudinary.models import CloudinaryField
 
 class Contributor(models.Model):
     name = models.CharField(max_length=200, unique=True)
+    slug = models.CharField(max_length=200, unique=True)
     role = models.CharField(max_length=200)
     headshot = CloudinaryField('image', default='placeholder')
     background = models.TextField()

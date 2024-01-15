@@ -6,6 +6,7 @@ from django_summernote.admin import SummernoteModelAdmin
 @admin.register(Contributor)
 class ContributorAdmin(SummernoteModelAdmin):
 
+    prepopulated_fields = {'slug': ('name',)}
     list_display = ('name', 'role', 'created_on')
     search_fields = ['name', 'role']
     summernote_fields = ('background', 'motivation')
