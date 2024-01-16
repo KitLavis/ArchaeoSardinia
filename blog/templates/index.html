@@ -12,7 +12,11 @@
                     <div class="col-8">
                         <h4 class="card-title fw-bold">{{ latest_news.title }}</h4>
                         <p class="card-text">{{ latest_news.excerpt }}</p>
-                        <p class="card-text"><small class="text-muted">{{ latest_news.created_on }}</small></p>
+                        <p class="card-text">
+                            <small class="text-muted">
+                            {{ latest_news.created_on }} <i class="far fa-heart"></i> {{ latest_news.number_of_likes }} <i class="fa-regular fa-comment"></i> {{ latest_news.comment_count }}
+                            </small>
+                        </p>
                     </div>
                     <div class="col-4">
                         <img class="card-img-top" src="{{ latest_news.featured_image.url }}" alt="{{ latest_news.title }}">
@@ -40,17 +44,14 @@
                                 {% else %}
                                 <img class="card-img-top" src="{{ post.featured_image.url }}">
                                 {% endif %}
-                                <div class="image-flash">
-                                    <p class="author">Author: {{ post.author }}</p>
-                                </div>
                             </div>
                             <a href="{% url 'post_detail' post.slug %}" class="post-link">
                                 <h2 class="card-title">{{ post.title }}</h2>
-                                <p class="card-text">{{ post.excerpt }}</p>
                             </a>
                             <hr />
-                            <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
-                                {{ post.number_of_likes }}</p>
+                            <p class="card-text text-muted h6">
+                                {{ post.created_on }} <i class="far fa-heart"></i> {{ post.number_of_likes }} <i class="fa-regular fa-comment"></i> {{ post.comment_count }}
+                            </p>
                         </div>
                     </div>
                 </div>

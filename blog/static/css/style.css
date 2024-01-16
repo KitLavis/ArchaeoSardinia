@@ -39,6 +39,10 @@ h6 {
     margin-left: 1em;
 }
 
+.card {
+    background-color: none;
+}
+
 div.card.mb-3.latest_news {
     padding-right: calc(var(--bs-gutter-x) * .5);
     padding-left: calc(var(--bs-gutter-x) * .5);
@@ -47,4 +51,9 @@ div.card.mb-3.latest_news {
 a:-webkit-any-link {
     cursor: pointer;
     text-decoration: none;
+}
+
+.card {
+    --bs-card-border-color: none;
+    --bs-card-bg: none;
 }

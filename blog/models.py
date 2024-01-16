@@ -32,6 +32,9 @@ class Post(models.Model):
     def number_of_likes(self):
         return self.likes.count()
 
+    def comment_count(self):
+        return self.comments.count()
+
 
 class Comment(models.Model):
     post = models.ForeignKey(
@@ -46,13 +49,9 @@ class Comment(models.Model):
     )
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
-    likes = models.ManyToManyField(User, related_name='comment_likes', blank=True)
 
     class Meta:
         ordering = ['created_on']
 
     def __str__(self):
         return f"Comment {self.content} by {self.name}"
-
-    def number_of_likes(self):
-        return self.likes.count()
