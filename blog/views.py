@@ -14,9 +14,10 @@ def FrontPage(request):
         return HttpResponseServerError()
     latest_news = queryset.latest()
     post_list = queryset.exclude(id=latest_news.id)
+    paginate_by = 4
 
-    paginator = Paginator(post_list, 4)
-    page_no = request.GET.get("page")
+    # paginator = Paginator(post_list, 4)
+    # page_no = request.GET.get("page")
 
     return render (
         request,

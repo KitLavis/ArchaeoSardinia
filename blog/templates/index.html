@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="container">
-    <h2 class="text-end">Hot off the Press</h2>
+    <h2>Latest</h2>
     <a href="{% url 'post_detail' latest_news.slug %}">
         <div class="card mb-3 latest-news">
             <div class="card-body">
@@ -14,7 +14,7 @@
                         <p class="card-text">{{ latest_news.excerpt }}</p>
                         <p class="card-text">
                             <small class="text-muted">
-                            {{ latest_news.created_on }} <i class="far fa-heart"></i> {{ latest_news.number_of_likes }} <i class="fa-regular fa-comment"></i> {{ latest_news.comment_count }}
+                            {{ latest_news.created_on|naturaltime }} <i class="far fa-heart"></i> {{ latest_news.number_of_likes }} <i class="fa-regular fa-comment"></i> {{ latest_news.comment_count }}
                             </small>
                         </p>
                     </div>
@@ -26,57 +26,33 @@
         </div>
     </a>
 </div>
-
 <div class="container">
     <div class="row">
-        <h2>In other news</h2>
-        <!-- Blog Entries Column -->
-        <div class="col-12 mt-3 left">
-            <div class="row">
-                {% for post in post_list %}
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="image-container">
-                                {% if "placeholder" in post.featured_image.url %}
-                                <img class="card-img-top"
-                                    src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
-                                {% else %}
-                                <img class="card-img-top" src="{{ post.featured_image.url }}">
-                                {% endif %}
+        <div class="col-8">
+            <h2>In other news</h2>
+            {% for post in post_list %}
+            <a href="{% url 'post_detail' post.slug %}">
+                <div class="card mb-3 post">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-4">
+                                <img class="card-img-top" src="{{ post.featured_image.url }}" alt="{{ post.title }}">
                             </div>
-                            <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                                <h2 class="card-title">{{ post.title }}</h2>
-                            </a>
-                            <hr />
-                            <p class="card-text text-muted h6">
-                                {{ post.created_on }} <i class="far fa-heart"></i> {{ post.number_of_likes }} <i class="fa-regular fa-comment"></i> {{ post.comment_count }}
-                            </p>
+                            <div class="col-8">
+                                <h4 class="card-title fw-bold">{{ post.title }}</h4>
+                                <p class="card-text">
+                                    <small class="text-muted">
+                                    {{ post.created_on }} <i class="far fa-heart"></i> {{ post.number_of_likes }} <i class="fa-regular fa-comment"></i> {{ post.comment_count }}
+                                    </small>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                {% if forloop.counter|divisibleby:3 %}
-            </div>
-            <div class="row">
-                {% endif %}
-                {% endfor %}
-
-            </div>
+            </a>
+            <hr>
+            {% endfor %}
         </div>
     </div>
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
-            {% endif %}
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
 </div>
-
 {% endblock %}

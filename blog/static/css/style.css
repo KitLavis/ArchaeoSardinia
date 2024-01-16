@@ -57,3 +57,7 @@ a:-webkit-any-link {
     --bs-card-border-color: none;
     --bs-card-bg: none;
 }
+
+.latest-news {
+    --bs-card-border-color: var(--bs-border-color-translucent);
+}
