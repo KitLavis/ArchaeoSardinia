@@ -1,10 +1,31 @@
 {% extends "base.html" %}
+{% load humanize %}
+{% load static %}
 
 {% block content %}
+<div class="container">
+    <h2 class="text-end">Hot off the Press</h2>
+    <a href="{% url 'post_detail' latest_news.slug %}">
+        <div class="card mb-3 latest-news">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-8">
+                        <h4 class="card-title fw-bold">{{ latest_news.title }}</h4>
+                        <p class="card-text">{{ latest_news.excerpt }}</p>
+                        <p class="card-text"><small class="text-muted">{{ latest_news.created_on }}</small></p>
+                    </div>
+                    <div class="col-4">
+                        <img class="card-img-top" src="{{ latest_news.featured_image.url }}" alt="{{ latest_news.title }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
 
-<div class="container-fluid">
+<div class="container">
     <div class="row">
-
+        <h2>In other news</h2>
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
@@ -17,7 +38,7 @@
                                 <img class="card-img-top"
                                     src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
                                 {% else %}
-                                <img class="card-img-top" src=" {{ post.featured_image.url }}">
+                                <img class="card-img-top" src="{{ post.featured_image.url }}">
                                 {% endif %}
                                 <div class="image-flash">
                                     <p class="author">Author: {{ post.author }}</p>

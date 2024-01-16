@@ -1,17 +1,31 @@
+from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.contrib import messages
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponseServerError
 from .models import Post, Comment
 from .forms import CommentForm
 
 
-class PostList(generic.ListView):
+def FrontPage(request):
 
-    models = Post
-    queryset = Post.objects.filter(status=1).order_by('-created_on')
-    template_name = 'index.html'
-    paginate_by = 6
+    queryset = Post.objects.filter(status=1)
+    if not queryset.exists():
+        return HttpResponseServerError()
+    latest_news = queryset.latest()
+    post_list = queryset.exclude(id=latest_news.id)
+
+    paginator = Paginator(post_list, 4)
+    page_no = request.GET.get("page")
+
+    return render (
+        request,
+        template_name="index.html",
+        context={
+            "latest_news": latest_news,
+            "post_list": post_list,
+        }
+    )
 
 class PostDetail(View):
 

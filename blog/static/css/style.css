@@ -1,6 +1,5 @@
 body {
     background-color: #faf0e6;
-    font-family: "EB Garamond", serif;
 }
 
 main {
@@ -19,6 +18,15 @@ main {
     background-color: #faf0e6;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "EB Garamond", serif;
+}
+
 .letter-space-2 {
     letter-spacing: 2px;
 }
@@ -29,4 +37,14 @@ main {
 
 .ml-1 {
     margin-left: 1em;
+}
+
+div.card.mb-3.latest_news {
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+}
+
+a:-webkit-any-link {
+    cursor: pointer;
+    text-decoration: none;
 }
