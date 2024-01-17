@@ -2,21 +2,22 @@
 {% load static %}
 
 {% block content %}
-
-<div class="row justify-content-around">
-{% for contributor in object_list %}
-    <div class="col-md-4">
-        <div class="card contributor-card" style="width: 18rem;">
-            <a href="{% url 'contributor_detail' contributor.slug %}">
-                <img src="{{ contributor.headshot.url }}" class="card-img-top" alt="{{ contributor.name }}"">
-                <div class="card-body">
-                    <h5 class="card-title">{{ contributor.name }}</h5>
-                    <p class="card-text">{{ contributor.role }}</p>
-                </div>
-            </a>
+<div class="conatiner">
+    <div class="row justify-content-around">
+    {% for contributor in object_list %}
+        <div class="col-md-4">
+            <div class="card contributor-card" style="width: 18rem;">
+                <a href="{% url 'contributor_detail' contributor.slug %}">
+                    <img src="{{ contributor.headshot.url }}" class="card-img-top" alt="{{ contributor.name }}"">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ contributor.name }}</h5>
+                        <p class="card-text">{{ contributor.role }}</p>
+                    </div>
+                </a>
+            </div>
         </div>
+    {% endfor %}
     </div>
-{% endfor %}
 </div>
 
 {% endblock %}

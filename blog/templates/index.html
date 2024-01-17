@@ -30,7 +30,7 @@
     <div class="row">
         <div class="col-8">
             <h2>In other news</h2>
-            {% for post in post_list %}
+            {% for post in p_posts %}
             <a href="{% url 'post_detail' post.slug %}">
                 <div class="card mb-3 post">
                     <div class="card-body">
@@ -52,6 +52,18 @@
             </a>
             <hr>
             {% endfor %}
+            <!-- Pagination -->
+            <div class="container justify-content-center">
+                {% if p_posts.has_previous %}
+                <a href="?page=1">&laquo First</a>
+                <a href="?page={{ p_posts.previous_page_number }}">Previous</a>
+                {% endif %}
+                Page {{ p_posts.number }} of {{ p_posts.paginator.num_pages }}
+                {% if p_posts.has_next %}
+                <a href="?page={{ p_posts.next_page_number }}">Next</a>
+                <a href="?page={{ p_posts.paginator.num_pages }}">Last &raquo</a>
+                {% endif %}
+            </div>
         </div>
     </div>
 </div>
