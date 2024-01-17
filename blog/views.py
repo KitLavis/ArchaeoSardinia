@@ -70,6 +70,7 @@ class PostDetail(View):
             comment = comment_form.save(commit=False)
             comment.post = post
             comment.save()
+            messages.add_message(request, messages.SUCCESS, 'Success! Thanks for contributing!')
 
             comment_form = CommentForm()
 
@@ -85,9 +86,7 @@ def comment_edit(request, slug, comment_id):
     if comment_form.is_valid() and comment.name == request.user:
         comment = comment_form.save(commit=False)
         comment.save()
-        messages.add_message(
-            request, messages.SUCCESS, 'Comment successfully updated!'
-            )
+        messages.add_message(request, messages.SUCCESS, 'Comment updated successfully')
     else:
         messages.add_message(
             request,
