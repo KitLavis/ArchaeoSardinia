@@ -101,15 +101,8 @@
     </div>
     {% endfor %}
 
-    {% if user.is_authenticated and comment_count > 0 %}
+    {% if user.is_authenticated %}
     <h3>Leave a comment:</h3>
-    <p>Posting as: {{ user.username }}</p>
-    <form id="commentForm" method="post" style="margin-top: 1.3em;">
-        {{ comment_form | crispy }}
-        {% csrf_token %}
-        <button type="submit" id="submitButton" class="btn btn-signup btn-lg">Submit</button>
-    </form>
-    {% else %}
     <p>Posting as: {{ user.username }}</p>
     <form id="commentForm" method="post" style="margin-top: 1.3em;">
         {{ comment_form | crispy }}
