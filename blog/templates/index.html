@@ -9,7 +9,7 @@
         <div class="card mb-3 latest-news">
             <div class="card-body">
                 <div class="row">
-                    <div class="col-8">
+                    <div class="col-sm-8">
                         <h4 class="card-title fw-bold">{{ latest_news.title }}</h4>
                         <p class="card-text">{{ latest_news.excerpt }}</p>
                         <p class="card-text">
@@ -18,7 +18,7 @@
                             </small>
                         </p>
                     </div>
-                    <div class="col-4">
+                    <div class="col-sm-4">
                         <img class="card-img-top" src="{{ latest_news.featured_image.url }}" alt="{{ latest_news.title }}">
                     </div>
                 </div>
@@ -28,17 +28,17 @@
 </div>
 <div class="container">
     <div class="row">
-        <div class="col-8">
+        <div class="col-md-8">
             <h2>In other news</h2>
             {% for post in p_posts %}
             <a href="{% url 'post_detail' post.slug %}">
                 <div class="card mb-3 post">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-4">
+                            <div class="col-sm-4">
                                 <img class="card-img-top" src="{{ post.featured_image.url }}" alt="{{ post.title }}">
                             </div>
-                            <div class="col-8">
+                            <div class="col-sm-8">
                                 <h4 class="card-title fw-bold">{{ post.title }}</h4>
                                 <p class="card-text">
                                     <small class="text-muted">

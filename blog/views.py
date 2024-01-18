@@ -1,13 +1,13 @@
 from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404, reverse
-from django.views import generic, View
+from django.views import View
 from django.contrib import messages
 from django.http import HttpResponseRedirect, HttpResponseServerError
 from .models import Post, Comment
 from .forms import CommentForm
 
 
-def FrontPage(request):
+def Home(request):
 
     queryset = Post.objects.filter(status=1)
     if not queryset.exists():
@@ -31,7 +31,7 @@ def FrontPage(request):
 
 class PostDetail(View):
 
-    def get(self, request, slug, *args, **kwargs):
+    def get(self, request, slug):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.order_by("created_on")
@@ -55,13 +55,10 @@ class PostDetail(View):
             },
         )
 
-    def post(self, request, slug, *args, **kwargs):
+    def post(self, request, slug):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.order_by("created_on")
-        liked = False
-        if post.likes.filter(id=self.request.user.id).exists():
-            liked = True
 
         comment_form = CommentForm(data=request.POST)
 
@@ -70,7 +67,11 @@ class PostDetail(View):
             comment = comment_form.save(commit=False)
             comment.post = post
             comment.save()
-            messages.add_message(request, messages.SUCCESS, 'Success! Thanks for contributing!')
+            messages.add_message(
+                request,
+                messages.SUCCESS,
+                'Success! Thanks for contributing!'
+                )
 
             comment_form = CommentForm()
 
@@ -82,7 +83,6 @@ def comment_edit(request, slug, comment_id):
         post = get_object_or_404(queryset, slug=slug)
         comment = get_object_or_404(Comment, pk=comment_id)
         comment_form = CommentForm(data=request.POST, instance=comment)
-
     if comment_form.is_valid() and comment.name == request.user:
         comment = comment_form.save(commit=False)
         comment.save()
