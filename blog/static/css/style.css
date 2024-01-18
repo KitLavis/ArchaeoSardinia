@@ -1,5 +1,6 @@
 body {
     background-color: #faf0e6;
+    font-family: "Helvetica", sans-serif;
 }
 
 main {
@@ -39,8 +40,13 @@ h6 {
     margin-left: 1em;
 }
 
-.card {
+.card-no-border {
     background-color: none;
+    --bs-card-border-color: none;
+}
+
+.card-no-bg {
+    --bs-card-bg: none;
 }
 
 div.card.mb-3.latest_news {
@@ -53,11 +59,27 @@ a:-webkit-any-link {
     text-decoration: none;
 }
 
-.card {
-    --bs-card-border-color: none;
-    --bs-card-bg: none;
-}
-
 .latest-news {
     --bs-card-border-color: var(--bs-border-color-translucent);
+}
+
+.scale {
+    width: 100%;
+    height: auto;
+}
+
+.masthead-image > img {
+    margin-bottom: 1rem;
+}
+
+.post-content-container {
+    margin-top: 1rem;
+}
+
+.comment-name {
+    font-size: 150%;
+}
+
+.comment-date {
+    font-size: 60%;
 }

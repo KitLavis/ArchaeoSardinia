@@ -21,12 +21,12 @@
             <img src="{{ post.featured_image.url }}" class="scale" alt="{{ post.title }}">
             {% endif %}
         </div>
+        <hr>
     </div>
 </div>
-
-<div class="container">
+<div class="container post-content-container">
     <div class="row">
-        <div class="col card mb-4  mt-3 left  top">
+        <div class="col card card-no-border card-no-bg mb-4 left top">
             <div class="card-body">
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
@@ -79,22 +79,22 @@
         <div class="col-md-8 card mb-2 mt-2">
             <div class="card-body">
                 <div class="comments" style="padding: 10px;">
-                    <h5 class="font-weight-bold">
-                        {{ comment.name }}
+                    <h5 class="comment-name font-weight-bold">
+                        {{ comment.name }} 
+                        <span class="text-muted font-weight-normal comment-date">
+                            {{ comment.created_on|naturaltime }}
+                        </span>
+                        {% if user.is_authenticated and comment.name == user %}
+                        <span class="float-end">
+                            <button class="btn btn-edit" comment_id="{{ comment.id }}"><i class="fa-solid fa-pencil" comment_id="{{ comment.id }}"></i></button>
+                            <button class="btn btn-delete" comment_id="{{ comment.id }}"><i class="fa-solid fa-trash" comment_id="{{ comment.id }}"></i></button>
+                        </span>
+                        {% endif %}
                     </h5>
-                    <p class=" text-muted font-weight-normal">
-                        {{ comment.created_on|naturaltime }}
-                    </p>
                     <!-- The body of the comment goes before the | -->
-                    <div id="comment{{ comment.id }}" class="lead">
+                    <div id="comment{{ comment.id }}" class="comment-content">
                         {{ comment.content }}
                     </div>
-                </div>
-                <div class="float-right">
-                {% if user.is_authenticated and comment.name == user %}
-                <button class="btn btn-edit" comment_id="{{ comment.id }}"><i class="fa-solid fa-pencil" comment_id="{{ comment.id }}"></i></button>
-                <button class="btn btn-delete" comment_id="{{ comment.id }}"><i class="fa-solid fa-trash" comment_id="{{ comment.id }}"></i></button>
-                {% endif %}
                 </div>
             </div>
         </div>

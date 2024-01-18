@@ -6,7 +6,7 @@
 <div class="container">
     <h2>Latest</h2>
     <a href="{% url 'post_detail' latest_news.slug %}">
-        <div class="card mb-3 latest-news">
+        <div class="card card-no-bg mb-3 latest-news">
             <div class="card-body">
                 <div class="row">
                     <div class="col-sm-8">
@@ -32,7 +32,7 @@
             <h2>In other news</h2>
             {% for post in p_posts %}
             <a href="{% url 'post_detail' post.slug %}">
-                <div class="card mb-3 post">
+                <div class="card card-no-border card-no-bg mb-3 post">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-4">
