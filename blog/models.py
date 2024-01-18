@@ -35,6 +35,15 @@ class Post(models.Model):
     def comment_count(self):
         return self.comments.count()
 
+    def date_no_time(self):
+        return (
+            self.created_on.strftime('%b')
+            + ' ' +
+            self.created_on.strftime('%d')
+            + ', ' +
+            self.created_on.strftime('%Y')
+            )
+
 
 class Comment(models.Model):
     post = models.ForeignKey(
