@@ -5,12 +5,14 @@ from .models import Contributor
 
 def Contributors(request):
 
-    queryset = Contributor.objects.order_by('name')
+    queryset = Contributor.objects.order_by('created_on')
+    new_recruit = queryset.latest()
 
     return render (
         request,
         template_name="contributors.html",
         context={
-            "contributors": queryset
+            "contributors": queryset,
+            "new_recruit": new_recruit
         },
     )

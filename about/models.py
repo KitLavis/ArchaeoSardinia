@@ -14,6 +14,10 @@ class Contributor(models.Model):
 
     class Meta:
         ordering = ['name']
+        get_latest_by = "created_on"
 
     def __str__(self):
         return self.name
+    
+    def joined_us(self):
+        return self.created_on.strftime('%b') + ' ' + self.created_on.strftime('%Y')

@@ -6,10 +6,10 @@
 
 
 {% for contributor in contributors %}
-{% if contributor.id|divisibleby:"2" %}
 <div class="container">
     <div class="card card-no-bg card-no-border">
         <div class="row">
+            {% if not contributor.id|divisibleby:"2" %}
             <div class="d-flex align-items-center col-md-3">
                 <div class="headshot-image">
                     {% if "placeholder" in contributor.headshot.url %}
@@ -22,56 +22,39 @@
             <div class="col-md-9">
                 <div class="masthead-text">
                     <h1 class="contributor-name">{{ contributor.name }}</h1>
-                    <p class="contributor-info">{{ contributor.role }} | since {{ contributor.created_on }}</p>
+                    <p class="contributor-info">{{ contributor.role }} | since {{ contributor.joined_us }}</p>
                 </div>
-                <!-- <div class="card-header">Background</div> -->
                 <div class="card-body">
-                <blockquote class="blockquote fs-90 mb-0">
-                    <p>{{ contributor.background }}</p>
-                </blockquote>
+                    <p class="fs-90 mb-0">{{ contributor.background }}</p>
                 </div>
-                <!-- <div class="card-header">Motivation</div> -->
                 <div class="card-body">
                     <blockquote class="blockquote fs-90 mb-0">
                     <p>{{ contributor.motivation }}</p>
                     </blockquote>
                 </div>
-                <!-- <div class="card-header">Favourtie place in Sardinia</div> -->
                 <div class="card-body">
                     <blockquote class="blockquote fs-90 mb-0">
-                    <p>{{ contributor.fav_place }}</p>
+                    <p>Favourtie place in Sardinia: {{ contributor.fav_place }}</p>
                     </blockquote>
                 </div>  
             </div>
-        </div>
-    </div>
-    <hr>
-</div>
-{% else %}
-<div class="container">
-    <div class="card card-no-bg card-no-border">
-        <div class="row">
+            {% else %}
             <div class="col-md-9 text-end">
                 <div class="masthead-text">
                     <h1 class="contributor-name">{{ contributor.name }}</h1>
-                    <p class="contributor-info">{{ contributor.role }} | since {{ contributor.created_on }}</p>
+                    <p class="contributor-info">{{ contributor.role }} | since {{ contributor.joined_us }}</p>
                 </div>
-                <!-- <div class="card-header">Background</div> -->
-                <div class="card-body fs-75">
-                <blockquote class="blockquote fs-90 mb-0">
-                    <p>{{ contributor.background }}</p>
-                </blockquote>
+                <div class="card-body">
+                    <p class="fs-90 mb-0">{{ contributor.background }}</p>
                 </div>
-                <!-- <div class="card-header">Motivation</div> -->
                 <div class="card-body">
                     <blockquote class="blockquote fs-90 mb-0">
                     <p>{{ contributor.motivation }}</p>
                     </blockquote>
                 </div>
-                <!-- <div class="card-header">Favourtie place in Sardinia</div> -->
                 <div class="card-body">
                     <blockquote class="blockquote fs-90 mb-0">
-                    <p>{{ contributor.fav_place }}</p>
+                    <p>Favourtie place in Sardinia: {{ contributor.fav_place }}</p>
                     </blockquote>
                 </div>  
             </div>
@@ -84,10 +67,13 @@
                     {% endif %}
                 </div>
             </div>
+            {% endif %}
         </div>
     </div>
+    {% if not contributor.id == new_recruit.id %}
+    <hr>
+    {% endif %}
 </div>
-{% endif %}
 {% endfor %}
 
 {% endblock %}
