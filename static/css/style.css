@@ -94,11 +94,3 @@ a:-webkit-any-link {
 .fs-90 {
     font-size: 90%;
 }
-
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-    /* aligns text end on medium devices and larger */
-    .text-end-md {
-        text-align: right;
-    }
-}
