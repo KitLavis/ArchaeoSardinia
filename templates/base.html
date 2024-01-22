@@ -59,6 +59,7 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav mb-2 mb-lg-0 letter-space-2">
+                    <!-- if user is logged in then logout will be displayed, if not then login/sign up will be displayed -->
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a href="{% url 'account_logout' %}" class="nav-link"><h6>logout</h6></a>
@@ -75,7 +76,7 @@
             </div>
         </div>
     </nav>
-
+    <!-- Allows messages to be displayed -->
     <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
@@ -108,7 +109,7 @@
                 <li class="nav-item"><a href="http://www.twitter.com" class="nav-link px-2 text-muted" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
         </footer>
     </div>
-
+    <!-- JS highlights header nav item when hovered over -->
     <script>
         document.querySelectorAll(".nav-link").forEach((link) => {
                 if (link.href === window.location.href) {
