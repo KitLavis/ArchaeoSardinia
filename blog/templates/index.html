@@ -3,6 +3,7 @@
 {% load static %}
 
 {% block content %}
+<!-- Takes the latest post and creates the headline article -->
 <div class="container">
     <h2>Latest</h2>
     <a href="{% url 'post_detail' latest_news.slug %}">
@@ -13,6 +14,7 @@
                         <h4 class="card-title fw-bold">{{ latest_news.title }}</h4>
                         <p class="card-text">{{ latest_news.excerpt }}</p>
                         <p class="card-text">
+                            <!-- naturaltime converts datetime to how long ago e.g. 1 day ago -->
                             <small class="text-muted">
                             {{ latest_news.created_on|naturaltime }} <i class="far fa-heart"></i> {{ latest_news.number_of_likes }} <i class="fa-regular fa-comment"></i> {{ latest_news.comment_count }}
                             </small>
@@ -26,10 +28,12 @@
         </div>
     </a>
 </div>
+<!-- Remaining posts -->
 <div class="container">
     <div class="row">
         <div class="col-md-8">
             <h2>In other news</h2>
+            <!-- for loop creates card for each post -->
             {% for post in p_posts %}
             <a href="{% url 'post_detail' post.slug %}">
                 <div class="card card-no-border card-no-bg mb-3 post">

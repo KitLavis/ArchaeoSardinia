@@ -6,6 +6,10 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 
 class Post(models.Model):
+    """
+    Stores a single blog post. Related to the User that
+    publishes the article
+    """
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.CharField(max_length=100, unique=False)
@@ -36,6 +40,9 @@ class Post(models.Model):
         return self.comments.count()
 
     def date_no_time(self):
+        """
+        Returns datetime without the time
+        """
         return (
             self.created_on.strftime('%b')
             + ' ' +
@@ -46,6 +53,10 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
+    """
+    Creates a single comment related to the post the
+    comment is on and the user that created the comment
+    """
     post = models.ForeignKey(
         Post,
         on_delete=models.CASCADE,

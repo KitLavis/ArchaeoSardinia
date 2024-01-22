@@ -8,7 +8,21 @@ from .forms import CommentForm
 
 
 def Home(request):
+    """
+    Returns all published posts in :model:`blog.Post`
+    and displays them in a page of six posts.
+    **Context**
 
+    ``queryset``
+        All published instances of blog.Post
+    ``latest_news``
+        The latest instance of blog.Post
+    ``post_list``
+        queryset excluding latest_news
+    ``paginator``
+        Number of posts per page excluding
+        latest_news
+    """
     queryset = Post.objects.filter(status=1)
     if not queryset.exists():
         return HttpResponseServerError()
@@ -30,7 +44,10 @@ def Home(request):
     )
 
 class PostDetail(View):
-
+    """
+    Displays an individul instance of blog.Post
+    in detail
+    """
     def get(self, request, slug):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
@@ -56,6 +73,10 @@ class PostDetail(View):
         )
 
     def post(self, request, slug):
+        """
+        Function post within PostDetail allows for
+        a comment to be added
+        """
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.order_by("created_on")
@@ -78,6 +99,9 @@ class PostDetail(View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 def comment_edit(request, slug, comment_id):
+    """
+    Function allows for an individual comment to be edited
+    """
     if request.method == "POST":
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
@@ -97,6 +121,9 @@ def comment_edit(request, slug, comment_id):
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 def comment_delete(request, slug, comment_id):
+    """
+    Function allows for an individual comment to be deleted
+    """
     queryset = Post.objects.filter(status=1)
     post = get_object_or_404(queryset, slug=slug)
     comment = get_object_or_404(Comment, pk=comment_id)
@@ -112,7 +139,10 @@ def comment_delete(request, slug, comment_id):
 
 
 class Like(View):
-
+    """
+    Class based view allows for a post to be liked by
+    a user
+    """
     def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug)
         if post.likes.filter(id=request.user.id).exists():
