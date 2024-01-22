@@ -3,6 +3,7 @@ body {
     font-family: "Helvetica", sans-serif;
 }
 
+/* Push footer to bottom */
 main {
     min-height: 100vh;
 }
@@ -40,29 +41,35 @@ h6 {
     margin-left: 1em;
 }
 
+/* add to card to remove border */
 .card-no-border {
     background-color: none;
     --bs-card-border-color: none;
 }
 
+/* add to card to remove background */
 .card-no-bg {
     --bs-card-bg: none;
 }
 
-div.card.mb-3.latest_news {
+/* adds padding to latest news */
+div.card.mb-3.latest-news {
     padding-right: calc(var(--bs-gutter-x) * .5);
     padding-left: calc(var(--bs-gutter-x) * .5);
 }
 
+/* removes underline from links */
 a:-webkit-any-link {
     cursor: pointer;
     text-decoration: none;
 }
 
+/* adds border back to latest news */
 .latest-news {
     --bs-card-border-color: var(--bs-border-color-translucent);
 }
 
+/* Scaling for images */
 .scale {
     width: 100%;
     height: auto;
@@ -90,6 +97,7 @@ a:-webkit-any-link {
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+    /* aligns text end on medium devices and larger */
     .text-end-md {
         text-align: right;
     }
