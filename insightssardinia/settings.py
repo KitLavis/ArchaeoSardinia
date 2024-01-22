@@ -38,7 +38,6 @@ ALLOWED_HOSTS = [
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-kitlavis-insightssardin-36xckim49yh.ws-eu107.gitpod.io',
-    '.herokuapp.com'
     ]
 
 # Application definition

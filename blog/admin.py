@@ -5,7 +5,7 @@ from django_summernote.admin import SummernoteModelAdmin
 
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
-   """
+    """
     Lists the fields to be displayed in admin, prepopulates
     the slug, adds search functionality, add rich text
     to content field
