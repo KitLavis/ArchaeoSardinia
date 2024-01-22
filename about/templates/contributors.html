@@ -9,7 +9,11 @@
 <div class="container">
     <div class="card card-no-bg card-no-border">
         <div class="row">
-            <div class="col-md-9 text-end">
+            {% if not contributor.id|divisibleby:"2" %}
+            <div class="col-md-9">
+            {% else %}
+            <div class="col-md-9 text-end-md">
+            {% endif %}
                 <div class="masthead-text">
                     <h1 class="contributor-name">{{ contributor.name }}</h1>
                     <p class="contributor-info">{{ contributor.role }} | since {{ contributor.joined_us }}</p>
