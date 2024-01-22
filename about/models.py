@@ -3,6 +3,9 @@ from cloudinary.models import CloudinaryField
 
 
 class Contributor(models.Model):
+    """
+    Contributor model. Stores a single contributor/team member
+    """
     name = models.CharField(max_length=200, unique=True)
     slug = models.CharField(max_length=200, unique=True)
     role = models.CharField(max_length=200)
@@ -13,6 +16,10 @@ class Contributor(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:
+        """
+        Orders contrbiutors alphabetically in admin.
+        Gets the latest/most recently added contributor.
+        """
         ordering = ['name']
         get_latest_by = "created_on"
 
@@ -20,4 +27,8 @@ class Contributor(models.Model):
         return self.name
     
     def joined_us(self):
+        """
+        Creates a cleaner looking date in a month/year format
+        e.g. Jan, 2024
+        """
         return self.created_on.strftime('%b') + ' ' + self.created_on.strftime('%Y')

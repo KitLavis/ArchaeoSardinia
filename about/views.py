@@ -4,7 +4,11 @@ from .models import Contributor
 
 
 def Contributors(request):
-
+    """
+    Renders information on all team members
+    Isolates latest instance for layout requirements
+    in contributors.html
+    """
     queryset = Contributor.objects.order_by('created_on')
     new_recruit = queryset.latest()
 
