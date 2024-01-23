@@ -64,11 +64,13 @@
         </div>
     </div>
     <!-- If user is not signed in then ask to login or register -->
-    {% if not user.is_authenticated %}
+    {% if not user.is_authenticated and comment_count == 0 %}
+    <p><a href="{% url 'account_login' %}">Login</a> or <a href="{% url 'account_signup' %}">register</a> to start the conversation</p>
+    {% elif not user.is_authenticated %}
     <p><a href="{% url 'account_login' %}">Login</a> or <a href="{% url 'account_signup' %}">register</a> to join the conversation</p>
     {% endif %}
     {% if comment_count == 0 %}
-    <h3>Start the conversation!</h3>
+    <h3>0 Comments</h3>
     {% elif comment_count == 1 %}
     <h3>1 Comment:</h3>
     {% else %}
@@ -103,8 +105,7 @@
     {% endfor %}
     <!-- if user is logged in they can leave a comment -->
     {% if user.is_authenticated %}
-    <h3>Leave a comment:</h3>
-    <p>Posting as: {{ user.username }}</p>
+    <p>Commenting as: {{ user.username }}</p>
     <form id="commentForm" method="post" style="margin-top: 1.3em;">
         {{ comment_form | crispy }}
         {% csrf_token %}
