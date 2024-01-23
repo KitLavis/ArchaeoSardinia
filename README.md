@@ -43,15 +43,99 @@ For more detailed information about each user story/epic and the relevant tasks,
 
 Due to the informative nature of the website, design was kept as simple and as clear as possible, so as not to detract from the information, therefore a simple off white/beige (#faf0e6) was used as the base colour throughout. The serif font "EB Garamond" was used for headings, inkeeping with the newspaper feel of the site, while the sans-serif "Helvetica" font was used for bulk content as it is clearer and easier to read.
 
+#### Wireframing
+
 ## Development
 
 ### Features
 
+#### Consistent Features
+
+- Navbar
+
+![Navbar](assets/docs/navbar.webp)
+
+- Footer
+
+![Footer](assets/docs/footer.webp)
+
+- Messages
+
+![Signed in message](assets/docs/signed-in-message.webp)
+
+#### Home
+
+- Latest post
+
+![Latest post](assets/docs/latest-post.webp)
+
+- Other news
+
+![Other news](assets/docs/other-news.webp)
+
+- Pagination
+
+![Paginator](assets/docs/pagination.webp)
+
+#### Post Detail
+
+- Information and image
+
+![Post detail](assets/docs/post-detail.webp)
+
+- Post content and likes
+
+![Post content and likes](assets/docs/post-content-likes.webp)
+
+- Comments
+
+![Comment section](assets/docs/comments.webp)
+
+- Edit comment
+
+![Comment edit](assets/docs/comment-edit.webp)
+
+- Delete comment modal
+
+![Comment delete modal](assets/docs/delete-modal.webp)
+
+#### Meet the Team
+
+- Contributors
+
+![The team](assets/docs/the-team.webp)
+
+#### Sign in, Sign up, Sign out
+
+- Login
+
+![Login form](assets/docs/login.webp)
+
+- Incorrect details
+
+![Incorrect details message example](assets/docs/wrong-details.webp)
+
+- Forgotten password
+
+![Password reset message](assets/docs/password-reset.webp)
+
+- Register
+
+![Registration form](assets/docs/registration.webp)
+
+- Logout
+
+![Logout confirmation](assets/docs/logout.webp)
+
+### Future Features
+
 ## Deployment
 
-## Testing
+## Testing and Validations
 
 ### Manual Testing
+
+### Code Validation
 
 ### Challenges and Bugs
 
