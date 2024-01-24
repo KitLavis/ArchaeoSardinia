@@ -243,6 +243,13 @@ Chrome's DevTools lighthouse report was used to get an overall report on the per
 
 ### Challenges and Bugs
 
+- The password reset link is an ongoing issue yet to be fixed. Django allauth comes with a password reset service that send a link to the user's email address. Unforuntately this isn't working, and due to time constraints can't be solved for this iteration. Therefore the curren temporary solution of an apology message has been used until the next iteration of the project.
+- There was an issue with the comment function. When the user would add a comment it would add successfully but the content section of the comment form would remain populated. If the user then refreshed the page it would add the same comment again. This was solved by calling the CommentForm function again before the Http redirect.
+- A third example of an issue faced was when registering an account. Previously, a user would attempt to register an account and it would throw a 500 server error. This was solved by adding the following code to the settings:
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+ACCOUNT_EMAIL_VERIFICATION = "none"
+
 ## Credits
 
 ### Code Content
