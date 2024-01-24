@@ -49,7 +49,6 @@ h6 {
 
 /* add to card to remove border */
 .card-no-border {
-    background-color: none;
     --bs-card-border-color: none;
 }
 

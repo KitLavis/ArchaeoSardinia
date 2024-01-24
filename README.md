@@ -208,18 +208,19 @@ Due to time constraints no automatic tests were written, however an extensive ma
 ### Code Validation
 
 - HTML
-    - [base.html]()
-    - [contributors.html]
-    - [index.html]
-    - [login.html]
-    - [logout.html]
-    - [password_reset.html]
-    - [post_detail.html]
-    - [signup.html]
+    - [index.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Finsights-sardinia-155a5490ffb8.herokuapp.com%2F)
+    - [contributors.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Finsights-sardinia-155a5490ffb8.herokuapp.com%2Fabout%2Fthe-team)
+    - [login.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Finsights-sardinia-155a5490ffb8.herokuapp.com%2Faccounts%2Flogin%2F)
+    - [logout.html](https://validator.w3.org/nu/?doc=https%3A%2F%2F8000-kitlavis-insightssardin-36xckim49yh.ws-eu107.gitpod.io%2Faccounts%2Flogout%2F)
+    - [password_reset.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Finsights-sardinia-155a5490ffb8.herokuapp.com%2Faccounts%2Fpassword%2Freset%2F)
+    - One example of [post_detail.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Finsights-sardinia-155a5490ffb8.herokuapp.com%2Fwhy-this-large-stone-age-sardinian-temple-altar-is-worth-visiting%2F)
+    - [signup.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Finsights-sardinia-155a5490ffb8.herokuapp.com%2Faccounts%2Fsignup%2F)
+        - The errors shown here are related to the allauth form, not the HTML written for the project
 
-- CSS
+- [CSS](http://jigsaw.w3.org/css-validator/validator$link)
 
 - JavaScript
+    - [comments.js]()
 
 - Python
 
