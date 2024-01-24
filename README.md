@@ -1,29 +1,27 @@
 # Insights: Sardinia
 
-![Am I Responsive Image](assets/docs/am-i-responsive.jpg)
+![Am I Responsive Image](docs/am-i-responsive.jpg)
 
-Insights: Sardinia (referred to as IS throughout this documentation) is a culture and heritage information/news site, with articles on anything Sardinian from archaeology to art, aimed at people who have a vested interest in the island, and those merely curious.
+Insights: Sardinia (referred to as IS throughout this documentation) is a culture and heritage information/news site, with articles on anything Sardinian from archaeology to art, aimed at people with a global view and an interest in tradtional cultures and customs.
 
-## Planning Phase
+[Live Deployment](https://insights-sardinia-155a5490ffb8.herokuapp.com/)
 
-### Aims and Objectives
-
-Since its assimilation into unified Italy around 150 years ago, Sardinia has seen a gradual but steady decline in its unique culture. Outside of the island and mainland Italy it is largely known by German tourists as a beach holiday destination, while the rest of Europe and the world knows either very little about it, or are completely unaware of its existence. IS aims to shed light on aspects of Sardinian culture and heritage that may not be known to the wider global public, in a bid to slow the decline of Sardinian culture. We plan to achieve this by posting interesting and engaging articles on a number of topics, including, but not limited to:
+Since its assimilation into unified Italy around 150 years ago, Sardinia has seen a gradual but steady decline in its unique culture. Outside of Italy, Sardinia is largely known by German tourists as a beach holiday destination, while the rest of Europe and the world knows either very little about it, or are completely unaware of its existence. IS aims to shed light on aspects of Sardinian culture and heritage that may not be known to the wider global public, in a bid to slow the decline of Sardinian culture. We plan to achieve this by posting interesting and engaging articles on a number of topics, including, but not limited to:
 - Culture
 - Heritage
 - Language
 - Politics
 - Local characters and their stories
 
-In future each article will have an accompanying video to cater for those who prefer to watch than read.
+In future each article will have an accompanying video to cater for those who prefer to watch rather than read.
 
-### Agile Methodology
+## Agile Methodology
 
 It was decided that an agile methodology would be implemented during the development of IS. This began with gathering a number of user stories and forming a corresponding epic for each. These epics were then broken down in to smaller tasks to achieve each objective.
 
 Due to the agile nature of the methodology used, as each feature or iteration changed or developed, new ideas would arise and different hurdles would have to be jumped. This meant that our methodology remained malleable throughout the process, so not all of the original epics and tasks match perfectly with the end result.
 
-#### User Stories, Epics and Tasks
+### User Stories, Epics and Tasks
 
 Five epic topics were collected from the user stories:
 - Admin Panel
@@ -39,99 +37,101 @@ A further three were added to these:
 
 For more detailed information about each user story/epic and the relevant tasks, please visit the [GitHub Project](https://github.com/users/KitLavis/projects/4/views/1)
 
-### Design
+## Design
 
-Due to the informative nature of the website, design was kept as simple and as clear as possible, so as not to detract from the information, therefore a simple off white/beige (#faf0e6) was used as the base colour throughout. The serif font "EB Garamond" was used for headings, inkeeping with the newspaper feel of the site, while the sans-serif "Helvetica" font was used for bulk content as it is clearer and easier to read.
+Due to the informative nature of the website, design was kept as simple and as clear as possible, so as not to detract from the information, therefore "linen" (#faf0e6) a simple off white/beige was used as the base colour throughout (see example below). The serif font "EB Garamond" was used for headings, inkeeping with the newspaper feel of the site, while the sans-serif "Helvetica" font was used for bulk content as it is clearer and easier to read.
 
-#### Wireframing
+![Example of colour linen](docs/linen-example.webp)
 
-## Development
+### Wireframing
 
-### Features
+## Features
 
-#### Consistent Features
+### Consistent Features
 
 - Navbar
 
-![Navbar](assets/docs/navbar.webp)
+![Navbar](docs/navbar.webp)
 
 - Footer
 
-![Footer](assets/docs/footer.webp)
+![Footer](docs/footer.webp)
 
 - Messages
 
-![Signed in message](assets/docs/signed-in-message.webp)
+![Signed in message](docs/signed-in-message.webp)
 
-#### Home
+### Home
 
 - Latest post
 
-![Latest post](assets/docs/latest-post.webp)
+![Latest post](docs/latest-post.webp)
 
 - Other news
 
-![Other news](assets/docs/other-news.webp)
+![Other news](docs/other-news.webp)
 
 - Pagination
 
-![Paginator](assets/docs/pagination.webp)
+![Paginator](docs/pagination.webp)
 
-#### Post Detail
+### Post Detail
 
 - Information and image
 
-![Post detail](assets/docs/post-detail.webp)
+![Post detail](docs/post-detail.webp)
 
 - Post content and likes
 
-![Post content and likes](assets/docs/post-content-likes.webp)
+![Post content and likes](docs/post-content-likes.webp)
 
 - Comments
 
-![Comment section](assets/docs/comments.webp)
+![Comment section](docs/comments.webp)
 
 - Edit comment
 
-![Comment edit](assets/docs/comment-edit.webp)
+![Comment edit](docs/comment-edit.webp)
 
 - Delete comment modal
 
-![Comment delete modal](assets/docs/delete-modal.webp)
+![Comment delete modal](docs/delete-modal.webp)
 
-#### Meet the Team
+### Meet the Team
 
 - Contributors
 
-![The team](assets/docs/the-team.webp)
+![The team](docs/the-team.webp)
 
-#### Sign in, Sign up, Sign out
+### Sign in, Sign up, Sign out
 
 - Login
 
-![Login form](assets/docs/login.webp)
+![Login form](docs/login.webp)
 
 - Incorrect details
 
-![Incorrect details message example](assets/docs/wrong-details.webp)
+![Incorrect details message example](docs/wrong-details.webp)
 
 - Forgotten password
 
-![Password reset message](assets/docs/password-reset.webp)
+![Password reset message](docs/password-reset.webp)
 
 - Register
 
-![Registration form](assets/docs/registration.webp)
+![Registration form](docs/registration.webp)
 
 - Logout
 
-![Logout confirmation](assets/docs/logout.webp)
+![Logout confirmation](docs/logout.webp)
 
 ### Future Features
 
-## Deployment
+## Development and Deployment
 
-## Testing and Validations
+### Tools and Technologies
+
+## Testing and Validation
 
 ### Manual Testing
 
@@ -141,12 +141,6 @@ Due to the informative nature of the website, design was kept as simple and as c
 
 ## Credits
 
-### Tools and Technologies
-
-### Django Apps and Extensions
-
 ### Code Content
 
 ### Media and Site Content
-
-
