@@ -223,11 +223,17 @@ Due to time constraints no automatic tests were written, however an extensive ma
 
 The [JSHint](https://jshint.com/) validator was used for JavaScript validation. Unfortunately no link to our specific test is provided, however the validator came back with just one warning of an unused variable due to bootstrap.
 
-[JSHint result](docs/jshint.webp)
+![JSHint result](docs/jshint.webp)
 
 - Python
 
+Every element of custom python written for the project was passed through the [Code Institute's Python linter](https://pep8ci.herokuapp.com/) and no errors were found. Unfortunately, the specific test cannot be linked.
+
 - Lighthouse Report
+
+Chrome's DevTools lighthouse report was used to get an overall report on the performance of the site.
+
+![Lighthouse report](docs/lighthouse.webp)
 
 ### Challenges and Bugs
 

@@ -25,10 +25,14 @@ class Contributor(models.Model):
 
     def __str__(self):
         return self.name
-    
+
     def joined_us(self):
         """
         Creates a cleaner looking date in a month/year format
         e.g. Jan, 2024
         """
-        return self.created_on.strftime('%b') + ' ' + self.created_on.strftime('%Y')
+        return (
+            self.created_on.strftime('%b')
+            + ' ' +
+            self.created_on.strftime('%Y')
+            )

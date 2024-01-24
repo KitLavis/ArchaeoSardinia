@@ -33,7 +33,7 @@ def Home(request):
     page = request.GET.get("page")
     p_posts = p.get_page(page)
 
-    return render (
+    return render(
         request,
         template_name="index.html",
         context={
@@ -42,6 +42,7 @@ def Home(request):
             "p_posts": p_posts,
         }
     )
+
 
 class PostDetail(View):
     """
@@ -98,6 +99,7 @@ class PostDetail(View):
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
+
 def comment_edit(request, slug, comment_id):
     """
     Function allows for an individual comment to be edited
@@ -110,7 +112,11 @@ def comment_edit(request, slug, comment_id):
     if comment_form.is_valid() and comment.name == request.user:
         comment = comment_form.save(commit=False)
         comment.save()
-        messages.add_message(request, messages.SUCCESS, 'Comment updated successfully')
+        messages.add_message(
+            request,
+            messages.SUCCESS,
+            'Comment updated successfully'
+        )
     else:
         messages.add_message(
             request,
@@ -119,6 +125,7 @@ def comment_edit(request, slug, comment_id):
             )
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
 
 def comment_delete(request, slug, comment_id):
     """
@@ -149,5 +156,5 @@ class Like(View):
             post.likes.remove(request.user)
         else:
             post.likes.add(request.user)
-        
+
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))

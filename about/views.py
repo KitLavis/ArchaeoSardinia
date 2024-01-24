@@ -12,7 +12,7 @@ def Contributors(request):
     queryset = Contributor.objects.order_by('created_on')
     new_recruit = queryset.latest()
 
-    return render (
+    return render(
         request,
         template_name="contributors.html",
         context={
