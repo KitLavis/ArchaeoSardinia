@@ -8,18 +8,6 @@ main {
     min-height: 100vh;
 }
 
-.footer-container {
-    position: relative;
-    bottom: 0;
-    top: auto;
-    left: 12.5vw;
-    width: 75vw;
-}
-
-.bg-is-primary {
-    background-color: #faf0e6;
-}
-
 h1,
 h2,
 h3,
@@ -29,6 +17,20 @@ h6 {
     font-family: "EB Garamond", serif;
 }
 
+.footer-container {
+    position: relative;
+    bottom: 0;
+    top: auto;
+    left: 12.5vw;
+    width: 75vw;
+}
+
+/* Change bootstrap primary background colour */
+.bg-is-primary {
+    background-color: #faf0e6;
+}
+
+/* "Boostrap-style" classes to add to elements */
 .letter-space-2 {
     letter-spacing: 2px;
 }
@@ -39,6 +41,10 @@ h6 {
 
 .ml-1 {
     margin-left: 1em;
+}
+
+.fs-90 {
+    font-size: 90%;
 }
 
 /* add to card to remove border */
@@ -89,8 +95,4 @@ a:-webkit-any-link {
 
 .comment-date {
     font-size: 60%;
-}
-
-.fs-90 {
-    font-size: 90%;
 }
