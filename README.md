@@ -188,11 +188,42 @@ This is the first iteration of the project, so there are a number of features ye
 
 ### Tools and Technologies
 
+- HTML5, CSS3, Javascript and Python are the languages used for the project.
+- Django is the full-stack framework, with a number of apps and extensions added:
+    - Allauth for the user account functionality and forms.
+    - Crispy Forms for the comment form.
+    - Pagination for the pagination of the post list.
+    - Summernote to add rich text editing on the Django admin panel.
+- Bootstrap is the CSS framework used mainly to provide responsiveness.
+- Cloudinary is used for image storage.
+- GitHub is used for version control and agile project planning.
+- GitPod is the online IDE used.
+- ElephantSQL is the database provider.
+- The project is deployed using Heroku.
+
 ## Testing and Validation
 
-### Manual Testing
+Due to time constraints no automatic tests were written, however an extensive manual test script can be found [here](testing.md)
 
 ### Code Validation
+
+- HTML
+    - [base.html]()
+    - [contributors.html]
+    - [index.html]
+    - [login.html]
+    - [logout.html]
+    - [password_reset.html]
+    - [post_detail.html]
+    - [signup.html]
+
+- CSS
+
+- JavaScript
+
+- Python
+
+- Lighthouse Report
 
 ### Challenges and Bugs
 
