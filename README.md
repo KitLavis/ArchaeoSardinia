@@ -221,7 +221,7 @@ Due to time constraints no automatic tests were written, however an extensive ma
 
 - JavaScript
 
-The [JSHint](https://jshint.com/) validator was used for JavaScript validation. Unfortunately no link to our specific test is provided, however the validator came back with just one warning of an unused variable due to bootstrap.
+The [JSHint](https://jshint.com/) validator was used for JavaScript validation. Unfortunately no link to our specific test is provided, however the validator came back with just one warning of an undefined variable due to bootstrap.
 
 ![JSHint result](docs/jshint.webp)
 
@@ -241,4 +241,19 @@ Chrome's DevTools lighthouse report was used to get an overall report on the per
 
 ### Code Content
 
+- The project itself is heavily based on the Code Institute's [Django Blog walkthrough project](https://github.com/Code-Institute-Solutions/Django3blog), especially the JavaScript for comment functionality.
+- The JavaScript to add the active class to the navbar links is by user Prosper Atu on [Stack Overflow](https://stackoverflow.com/questions/72050328/add-active-class-to-navbar-element-when-clicked).
+- Layout of the home page was inspired by Kristyna Wach's [Fantastic News](https://github.com/Cushione/fantastic-news/tree/main)
+
 ### Media and Site Content
+
+- All articles and their respective images are from outside sources used for example purposes to show the kind of content that would fit the project. They can be found here:
+    - Aaron Spray (thetravel.com)[https://www.thetravel.com/what-to-know-about-monte-d-accoddi-sardinia/]
+    - Kiki Streitberger (bbc.com)[https://www.bbc.com/travel/article/20221017-nuraghi-sardinias-mysterious-beehive-towers]
+    - Nikita Ephanov (tastingtable.com)[https://www.tastingtable.com/1458893/historic-sardinia-pecorino-cheese-tuscany/]
+    - Arta Desku (schengenvisainfo.com)[https://www.schengenvisainfo.com/news/sardinian-village-offers-3-months-free-rent-to-remote-workers/]
+    - (apnews.com)[https://apnews.com/article/italy-ancient-coins-sardinia-divers-cabdfa070d37a8020f874dd90c0a2433]
+    - Tzvetozar Vincent Iolov (themayor.eu)[https://www.themayor.eu/en/a/view/did-you-know-that-it-s-illegal-to-take-pebbles-from-sardinian-beaches-12058]
+    - Bridget Ryder (europeanconservative.com)[https://europeanconservative.com/articles/news/sardinian-sheepherders-pass-tradition-to-kyrgyz-muslims/]
+- All icons are from (Font Awesome)[https://fontawesome.com/icons]
+- Wireframes were created using Balsamiq
