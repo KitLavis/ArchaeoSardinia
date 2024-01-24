@@ -248,12 +248,12 @@ Chrome's DevTools lighthouse report was used to get an overall report on the per
 ### Media and Site Content
 
 - All articles and their respective images are from outside sources used for example purposes to show the kind of content that would fit the project. They can be found here:
-    - Aaron Spray (thetravel.com)[https://www.thetravel.com/what-to-know-about-monte-d-accoddi-sardinia/]
-    - Kiki Streitberger (bbc.com)[https://www.bbc.com/travel/article/20221017-nuraghi-sardinias-mysterious-beehive-towers]
-    - Nikita Ephanov (tastingtable.com)[https://www.tastingtable.com/1458893/historic-sardinia-pecorino-cheese-tuscany/]
-    - Arta Desku (schengenvisainfo.com)[https://www.schengenvisainfo.com/news/sardinian-village-offers-3-months-free-rent-to-remote-workers/]
-    - (apnews.com)[https://apnews.com/article/italy-ancient-coins-sardinia-divers-cabdfa070d37a8020f874dd90c0a2433]
-    - Tzvetozar Vincent Iolov (themayor.eu)[https://www.themayor.eu/en/a/view/did-you-know-that-it-s-illegal-to-take-pebbles-from-sardinian-beaches-12058]
-    - Bridget Ryder (europeanconservative.com)[https://europeanconservative.com/articles/news/sardinian-sheepherders-pass-tradition-to-kyrgyz-muslims/]
-- All icons are from (Font Awesome)[https://fontawesome.com/icons]
+    - Aaron Spray [thetravel.com](https://www.thetravel.com/what-to-know-about-monte-d-accoddi-sardinia/)
+    - Kiki Streitberger [bbc.com](https://www.bbc.com/travel/article/20221017-nuraghi-sardinias-mysterious-beehive-towers)
+    - Nikita Ephanov [tastingtable.com](https://www.tastingtable.com/1458893/historic-sardinia-pecorino-cheese-tuscany/)
+    - Arta Desku [schengenvisainfo.com](https://www.schengenvisainfo.com/news/sardinian-village-offers-3-months-free-rent-to-remote-workers/)
+    - [apnews.com](https://apnews.com/article/italy-ancient-coins-sardinia-divers-cabdfa070d37a8020f874dd90c0a2433)
+    - Tzvetozar Vincent Iolov [themayor.eu](https://www.themayor.eu/en/a/view/did-you-know-that-it-s-illegal-to-take-pebbles-from-sardinian-beaches-12058)
+    - Bridget Ryder [europeanconservative.com](https://europeanconservative.com/articles/news/sardinian-sheepherders-pass-tradition-to-kyrgyz-muslims/)
+- All icons are from [Font Awesome](https://fontawesome.com/icons)
 - Wireframes were created using Balsamiq
