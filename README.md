@@ -220,7 +220,10 @@ Due to time constraints no automatic tests were written, however an extensive ma
 - [CSS](http://jigsaw.w3.org/css-validator/validator$link)
 
 - JavaScript
-    - [comments.js]()
+
+The [JSHint](https://jshint.com/) validator was used for JavaScript validation. Unfortunately no link to our specific test is provided, however the validator came back with just one warning of an unused variable due to bootstrap.
+
+[JSHint result](docs/jshint.webp)
 
 - Python
 
