@@ -61,53 +61,81 @@ Due to the informative nature of the website, design was kept as simple and as c
 
 ### Consistent Features
 
+As well as the overriding desgin aspects of the project, there are three features that remain consistent throughout: the navbar, the footer, and the pop-up messages.
+
 - Navbar
 
 ![Navbar](docs/navbar.webp)
+
+As is the theme, the navbar is kept as simple as possible while remaining completely functional. The title can be seen at the far left of the feature, which also acts as a link to the home page, next to which is the "home" and "meet the team" (about) links. To the far right of the component is the account links. If a user is not logged in then "login" and "signup" are displayed. If the user is logged in, then "logout" is displayed. Each link is highlighted once the user hovers the cursor over. On smaller devices these navigation links are consolidated into a burger icon.
 
 - Footer
 
 ![Footer](docs/footer.webp)
 
+The footer consists of three components: the copyright notice on the left, the title of the project "Insights" in the middle, and links to a number of social media outlets on the right. Currently these links direct the user to the home page of the respective social media outlet, as the project does not currently have a social media presence.
+
 - Messages
 
 ![Signed in message](docs/signed-in-message.webp)
 
+When the user interacts with the website, such as signing in/out, registering, leaving a comment, editing a comment or deleting a comment, a message like the example above is displayed.
+
 ### Home
+
+The home page is where the user is shown the latest articles uploaded to the site.
 
 - Latest post
 
 ![Latest post](docs/latest-post.webp)
 
+At the top of the page the latest post is published in a full width container, akin to a newspaper headline. As is with the rest of the posts displayed below, the comment count and number of likes is displayed here. The whole of this section functions as a link to the page dedicated to the post.
+
 - Other news
 
 ![Other news](docs/other-news.webp)
+
+Beneath the full width headline comes the next four latest posts, in smaller containers occupying ~66% of the width. Each sections acts as a link to the corresponding post.
 
 - Pagination
 
 ![Paginator](docs/pagination.webp)
 
+Pagination is used so that the home page is not one long stream of information. Four articles are displayed in the "other news" section per page.
+
 ### Post Detail
+
+When the user clicks on an article, they are taken to the corresponding post detail page where they can see more information about the article, read the content, and comment on and like the article.
 
 - Information and image
 
 ![Post detail](docs/post-detail.webp)
 
+As is custom, the title, author, and date of publication is displayed at the top of the page, followed by the article's image.
+
 - Post content and likes
 
 ![Post content and likes](docs/post-content-likes.webp)
+
+At the bottom of the actual content of the post comes the like button which an authenticated user can click in order to show their appreciation/interest in the topic.
 
 - Comments
 
 ![Comment section](docs/comments.webp)
 
+The comments section varies dependant on whether the user is logged in or not, and whether or not there are already comments on the post. The image here is an example of a logged in user commenting on an article that already contains a comment, so the comment count and form are displayed. If the user is not authenticated, they will be encouraged to either login or register. 
+
 - Edit comment
 
 ![Comment edit](docs/comment-edit.webp)
 
+If the user is authenticated and they have left a comment, then a pencil icon appears on that comment. Once clicked the comment form is populated with the existing comment, which can be edited. The submit button is replaced with and update button, to indicate that the comment is being edited rather than submitted for the first time.
+
 - Delete comment modal
 
 ![Comment delete modal](docs/delete-modal.webp)
+
+If the user is authenticated and they have left a comment, then a dustbin icon appears on that comment. Once clicked the delete modal is displayed, to make sure the user definitely wants to delete thheir comment.
 
 ### Meet the Team
 
