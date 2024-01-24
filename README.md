@@ -186,6 +186,10 @@ This is the first iteration of the project, so there are a number of features ye
 
 ## Development and Deployment
 
+Before any coding began, some though had to go towards the database models required. In future, authors will be updated to a foreign key, as will the contributor names to allow their comments and articles to be linked to their user account.
+
+![Entity relationship diagrams](docs/entity-relationship-diagrams.webp)
+
 ### Tools and Technologies
 
 - HTML5, CSS3, Javascript and Python are the languages used for the project.
