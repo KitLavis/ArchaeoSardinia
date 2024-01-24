@@ -143,13 +143,19 @@ If the user is authenticated and they have left a comment, then a dustbin icon a
 
 ![The team](docs/the-team.webp)
 
+The "meet the team" page is an area for the user to learn more about the people behind the project. Here each instance of the contributor model is displayed. This includes their name, their role, when they joined the project, and a brief description of their background and motivations.
+
 ### Sign in, Sign up, Sign out
+
+These features allow the user to register an account and sign in/out of that account. Currently their is no account management features for the user, so the "forgotten password" link on the login form redirects to a message explaining this (see below). All forms here are Django allauth forms.
 
 - Login
 
 ![Login form](docs/login.webp)
 
 - Incorrect details
+
+This message is displayed when the user enters incorrect credentials.
 
 ![Incorrect details message example](docs/wrong-details.webp)
 
@@ -166,6 +172,17 @@ If the user is authenticated and they have left a comment, then a dustbin icon a
 ![Logout confirmation](docs/logout.webp)
 
 ### Future Features
+
+This is the first iteration of the project, so there are a number of features yet to be added. These include:
+
+- Advertisement
+    - In the free space to the right of the "other news" an advertisement could be displayed in order to bring revenue to the project. Further advertising could be displayed in the left and right margins on larger devices
+- User account CRUD functionality
+    - Currently the only full CRUD functionality available to the user is the comments section. In future the user will be able to manage their account, change email address, password and so on, and have the ability to delete their account if that is their wish.
+- Categories
+    - A category attribute will be added to the post model to group articles of a similar topic.
+- Post search and filter
+    - A search bar will be added to the navbar on the home page to allow users to search for specific articles. A filter function will also be added to allow users to filter articles by their category.
 
 ## Development and Deployment
 
