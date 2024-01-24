@@ -217,7 +217,9 @@ Due to time constraints no automatic tests were written, however an extensive ma
     - [signup.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Finsights-sardinia-155a5490ffb8.herokuapp.com%2Faccounts%2Fsignup%2F)
         - The errors shown here are related to the allauth form, not the HTML written for the project
 
-- [CSS](http://jigsaw.w3.org/css-validator/validator$link)
+- The raw CSS was passed the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) with no errors.
+
+![CSS validation result](docs/css-validator.webp)
 
 - JavaScript
 
