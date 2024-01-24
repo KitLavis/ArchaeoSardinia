@@ -45,6 +45,18 @@ Due to the informative nature of the website, design was kept as simple and as c
 
 ### Wireframing
 
+- Home page
+
+![Wireframe of home page](docs/wireframe-home.webp)
+
+- About page
+
+![Wireframe of about pages](docs/wireframe-about.webp)
+
+- Post detail
+
+![Wireframe of post detail page](docs/wireframe-post-detail.webp)
+
 ## Features
 
 ### Consistent Features
