@@ -153,9 +153,9 @@ These features allow the user to register an account and sign in/out of that acc
 
 ![Login form](docs/login.webp)
 
-- Incorrect details
+This is where the user can login. Once logged in they are redirected to the home page and shown the successful login message. If the details entered are incorrect, they are shown the message below.
 
-This message is displayed when the user enters incorrect credentials.
+- Incorrect details
 
 ![Incorrect details message example](docs/wrong-details.webp)
 
@@ -163,13 +163,19 @@ This message is displayed when the user enters incorrect credentials.
 
 ![Password reset message](docs/password-reset.webp)
 
+As explained above, the password reset service is not currently available, so if a user clicks the "forgotten password" link on the login form, they are directed to this page.
+
 - Register
 
 ![Registration form](docs/registration.webp)
 
+Once the user has filled out this form succesfully, they are logged in, redirected to the home page and shown the successful sigin message.
+
 - Logout
 
 ![Logout confirmation](docs/logout.webp)
+
+Once the user confirms they wish to logout they are then redirected to the home page and are shown the successful logout message.
 
 ### Future Features
 
@@ -189,6 +195,15 @@ This is the first iteration of the project, so there are a number of features ye
 Before any coding began, some though had to go towards the database models required. In future, authors will be updated to a foreign key, as will the contributor names to allow their comments and articles to be linked to their user account.
 
 ![Entity relationship diagrams](docs/entity-relationship-diagrams.webp)
+
+The process to deploy a python based project is quite involved and goes as follows:
+- Set DEBUG to False in settings.py.
+- Make sure all dependencies are stored in the requirements.txt file. This can be done with the command "pip3 freeze --local > requirements.txt".
+- Create a Procfile containing the command "web: gunicorn insightssardinia.wsgi"
+- On the Heroku create a new app.
+- In the settings set the config vars. For IS we needed the ElephantySQL URL, Cloudinary URL and the Django secret key, plus we disabled collect static and added a Port value.
+- Add the python buildpack.
+- The project is then ready for deployment. We connected the GitHub repository and used manual deployments so that we could control which versions would be deployed, however there are alternative options available.
 
 ### Tools and Technologies
 
@@ -248,6 +263,7 @@ Chrome's DevTools lighthouse report was used to get an overall report on the per
 - A third example of an issue faced was when registering an account. Previously, a user would attempt to register an account and it would throw a 500 server error. This was solved by adding the following code to the settings:
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 ACCOUNT_EMAIL_VERIFICATION = "none"
 
 ## Credits
