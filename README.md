@@ -19,7 +19,7 @@ In future each article will have an accompanying video to cater for those who pr
 
 It was decided that an agile methodology would be implemented during the development of IS. This began with gathering a number of user stories and forming a corresponding epic for each. These epics were then broken down in to smaller tasks to achieve each objective.
 
-Due to the agile nature of the methodology used, as each feature or iteration changed or developed, new ideas would arise and different hurdles would have to be jumped. This meant that our methodology remained malleable throughout the process, so not all of the original epics and tasks match perfectly with the end result.
+Due to the agile nature of the methodology used, as each feature or iteration changed or developed, new ideas would arise and different hurdles would have to be jumped. This meant that our methodology remained malleable throughout the process, so the original epics and tasks may not match perfectly with the end result.
 
 ### User Stories, Epics and Tasks
 
@@ -95,7 +95,7 @@ At the top of the page the latest post is published in a full width container, a
 
 ![Other news](docs/other-news.webp)
 
-Beneath the full width headline comes the next four latest posts, in smaller containers occupying ~66% of the width. Each sections acts as a link to the corresponding post.
+Beneath the full width headline comes the next four latest posts, in smaller containers occupying ~66% of the width. Each section acts as a link to the corresponding post.
 
 - Pagination
 
@@ -184,7 +184,7 @@ This is the first iteration of the project, so there are a number of features ye
 - Advertisement
     - In the free space to the right of the "other news" an advertisement could be displayed in order to bring revenue to the project. Further advertising could be displayed in the left and right margins on larger devices
 - User account CRUD functionality
-    - Currently the only full CRUD functionality available to the user is the comments section. In future the user will be able to manage their account, change email address, password and so on, and have the ability to delete their account if that is their wish.
+    - Currently the only full CRUD functionality available to the user is the comments section. In future the user will be able to manage their account, change email address, password and so on, and have the ability to delete their account if they wish.
 - Categories
     - A category attribute will be added to the post model to group articles of a similar topic.
 - Post search and filter
@@ -192,7 +192,7 @@ This is the first iteration of the project, so there are a number of features ye
 
 ## Development and Deployment
 
-Before any coding began, some though had to go towards the database models required. In future, authors will be updated to a foreign key, as will the contributor names to allow their comments and articles to be linked to their user account.
+Before any coding began, some thought had to go towards the database models required. In future, authors will be updated to a foreign key, as will the contributor names to allow their comments and articles to be linked to their user account.
 
 ![Entity relationship diagrams](docs/entity-relationship-diagrams.webp)
 
@@ -200,7 +200,7 @@ The process to deploy a python based project is quite involved and goes as follo
 - Set DEBUG to False in settings.py.
 - Make sure all dependencies are stored in the requirements.txt file. This can be done with the command "pip3 freeze --local > requirements.txt".
 - Create a Procfile containing the command "web: gunicorn insightssardinia.wsgi"
-- On the Heroku create a new app.
+- On Heroku create a new app.
 - In the settings set the config vars. For IS we needed the ElephantySQL URL, Cloudinary URL and the Django secret key, plus we disabled collect static and added a Port value.
 - Add the python buildpack.
 - The project is then ready for deployment. We connected the GitHub repository and used manual deployments so that we could control which versions would be deployed, however there are alternative options available.
@@ -272,7 +272,7 @@ ACCOUNT_EMAIL_VERIFICATION = "none"
 
 - The project itself is heavily based on the Code Institute's [Django Blog walkthrough project](https://github.com/Code-Institute-Solutions/Django3blog), especially the JavaScript for comment functionality.
 - The JavaScript to add the active class to the navbar links is by user Prosper Atu on [Stack Overflow](https://stackoverflow.com/questions/72050328/add-active-class-to-navbar-element-when-clicked).
-- Layout of the home page was inspired by Kristyna Wach's [Fantastic News](https://github.com/Cushione/fantastic-news/tree/main)
+- Layout of the home page and the test script were inspired by Kristyna Wach's [Fantastic News](https://github.com/Cushione/fantastic-news/tree/main)
 
 ### Media and Site Content
 
