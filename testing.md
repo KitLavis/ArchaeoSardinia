@@ -22,6 +22,7 @@ This test script can be followed in order to manually test the site for any faul
 | 14     | Writing a comment                 | Form is not present, no request is possible             | Pass        |
 | 15     | Editing a comment                 | Button is not present, no request is possible           | Pass        |
 | 16     | Delete a comment                  | Button is not present, no request is possible           | Pass        |
-
+|        | **Links**                         |                                                         |             |
+| 17     | Open external link                | Success, link opens correct web page in a new tab       | Pass        |
 
 These tests are based on Kristyna Wach's test script for [Fantastic News](https://github.com/Cushione/fantastic-news/tree/main)
